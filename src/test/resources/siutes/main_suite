@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test suite" parallel="classes" thread-count="10">
+
+    <test name="Integration tests" annotations="JDK">
+        <groups>
+            <run>
+                <include name="integration"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="com.example.*"/>
+        </packages>
+    </test>
+
+</suite>
