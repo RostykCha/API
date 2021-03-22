@@ -9,14 +9,14 @@ import static utils.UserLogger.logInfo;
 public class UserAssert {
 
     public void verifyCreatingUserResponseCodeIs201(Response response) {
-        String id = response.then().extract().as(UserDto.class).id;
+        String id = response.then().extract().as(UserDto.class).getId();
         logInfo.info("Verify that that user with ID : " + id + " is created");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }
 
     public void verifyUpdatingUserResponseCodeIs200(Response response) {
-        String id = response.then().extract().as(UserDto.class).id;
+        String id = response.then().extract().as(UserDto.class).getId();
         logInfo.info("Verify that that user with ID : " + id + " was Updated");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 200);
@@ -31,9 +31,9 @@ public class UserAssert {
     }
 
     public void verifyUserDto(String expectedName, String expectedUserName, String expectedCity, UserDto actualUserDto) {
-        Assert.assertEquals(actualUserDto.name, expectedName);
-        Assert.assertEquals(actualUserDto.username, expectedUserName);
-        Assert.assertEquals(actualUserDto.address.city, expectedCity);
+        Assert.assertEquals(actualUserDto.getName(), expectedName);
+        Assert.assertEquals(actualUserDto.getUserName(), expectedUserName);
+        Assert.assertEquals(actualUserDto.getAddress().city, expectedCity);
 
     }
 

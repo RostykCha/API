@@ -22,8 +22,8 @@ public class VerifyTheAbilityToUpdateUserValidId extends TestBase {
 
     @Test
     public void verifyUpdatingUser() {
-        UserDto userDto = new UserDto(id, name, username, email, addressDto, phone, website, companyDto);
-        Response response = UserClient.updateUSer(userDto,"8");
-        userAssert.verifyUpdatingUserResponseCodeIs200(response);
+//        UserDto userDto = new UserDto(id, name, username, email, addressDto, phone, website, companyDto);
+//        Response response = UserClient.updateUSer(userDto,"8");
+//        userAssert.verifyUpdatingUserResponseCodeIs200(response);
     }
 }

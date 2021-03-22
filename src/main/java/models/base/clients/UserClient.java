@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
 import models.base.dto.UserDto;
+import service.AbstractWebEndpoint;
 import service.Endpoints;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-public class UserClient extends ApiClient {
+public class UserClient extends AbstractWebEndpoint {
 
     public static Response createNewUSer(UserDto userDto) {
         return given().body(userDto).post(Endpoints.USER);

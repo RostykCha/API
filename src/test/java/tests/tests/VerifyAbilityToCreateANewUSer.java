@@ -22,9 +22,9 @@ public class VerifyAbilityToCreateANewUSer extends TestBase {
 
     @Test
     public void verifyCreatingNewUser() {
-        UserDto userDto = new UserDto(id, name, username, email, addressDto, phone, website, companyDto);
-        Response response = UserClient.createNewUSer(userDto);
-        userAssert.verifyCreatingUserResponseCodeIs201(response);
+//        UserDto userDto = new UserDto(id, name, username, email, addressDto, phone, website, companyDto);
+//        Response response = UserClient.createNewUSer(userDto);
+//        userAssert.verifyCreatingUserResponseCodeIs201(response);
     }
 
 

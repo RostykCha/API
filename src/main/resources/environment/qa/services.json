@@ -1,0 +1,6 @@
+{
+  "JsonPlaceholderService": {
+    "ApiURL": "https://jsonplaceholder.typicode.com",
+    "ApiPort": 80
+  }
+}

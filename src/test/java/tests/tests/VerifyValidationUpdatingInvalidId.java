@@ -22,8 +22,8 @@ public class VerifyValidationUpdatingInvalidId extends TestBase {
 
     @Test
     public void verifyUpdatingUserInvalidId() {
-        UserDto userDto = new UserDto(id, name, username, email, addressDto, phone, website, companyDto);
-        Response response = UserClient.updateUSer(userDto, "13");
-        userAssert.verifyUpdatingUserInvalidIdResponseCodeIs404(response, id);
+//        UserDto userDto = new UserDto(id, name, username, email, addressDto, phone, website, companyDto);
+//        Response response = UserClient.updateUSer(userDto, "13");
+//        userAssert.verifyUpdatingUserInvalidIdResponseCodeIs404(response, id);
     }
 }
