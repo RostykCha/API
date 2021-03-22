@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Getting Users suite">
+
+    <test name="Verify Getting User">
+        <classes>
+            <class name="tests.tests.VerifyGettingUser"/>
+        </classes>
+    </test>
+
+    <test name="Verify Count Of Users List">
+        <classes>
+            <class name="tests.tests.VerifyCountOfUsersList"/>
+        </classes>
+    </test>
+
+</suite>

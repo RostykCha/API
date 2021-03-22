@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Creating Users suite">
+
+    <test name="Verify Ability To Create A New User">
+        <classes>
+            <class name="tests.tests.VerifyAbilityToCreateANewUSer"/>
+        </classes>
+    </test>
+
+</suite>

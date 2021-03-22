@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Updating Users suite">
+
+    <test name="Verify The Ability To Update User ValidId">
+        <classes>
+            <class name="tests.tests.VerifyTheAbilityToUpdateUserValidId"/>
+        </classes>
+    </test>
+
+    <test name="Verify Validation Updating with Invalid Id">
+        <classes>
+            <class name="tests.tests.VerifyValidationUpdatingInvalidId"/>
+        </classes>
+    </test>
+
+</suite>

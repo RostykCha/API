@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main suite" verbose="1">
+
+    <suite-files>
+        <suite-file path="functional/getting_users.xml"/>
+        <suite-file path="functional/updating_users.xml"/>
+        <suite-file path="functional/creating_users.xml"/>
+    </suite-files>
+
+</suite>
