@@ -31,14 +31,30 @@ public abstract class AbstractWebEndpoint {
                 .then();
     }
 
-    public ValidatableResponse get() {
-        ValidatableResponse validatableResponse = null;
-        return validatableResponse;
+    public ValidatableResponse get(RequestSpecification requestSpecification, String path, Object bodyPayload, Object... pathParams) {
+        RequestSpecBuilder specBuilder = new RequestSpecBuilder();
+        specBuilder.addRequestSpecification(requestSpecification);
+        if (bodyPayload != null) {
+            specBuilder.setBody(bodyPayload);
+        }
+        return given()
+                .spec(specBuilder.build())
+                .when()
+                .get(path, pathParams)
+                .then();
     }
 
-    public ValidatableResponse put() {
-        ValidatableResponse validatableResponse = null;
-        return validatableResponse;
+    public ValidatableResponse put(RequestSpecification requestSpecification, String path, Object bodyPayload, Object... pathParams) {
+        RequestSpecBuilder specBuilder = new RequestSpecBuilder();
+        specBuilder.addRequestSpecification(requestSpecification);
+        if (bodyPayload != null) {
+            specBuilder.setBody(bodyPayload);
+        }
+        return given()
+                .spec(specBuilder.build())
+                .when()
+                .put(path, pathParams)
+                .then();
     }
 
 }
