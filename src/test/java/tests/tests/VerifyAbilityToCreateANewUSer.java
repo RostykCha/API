@@ -1,12 +1,12 @@
 package tests.tests;
 
-import io.restassured.response.Response;
-import models.base.clients.UserClient;
 import models.base.dto.AddressDto;
 import models.base.dto.CompanyDto;
 import models.base.dto.GeoDto;
 import models.base.dto.UserDto;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
+import service.Services;
 import tests.base.TestBase;
 
 public class VerifyAbilityToCreateANewUSer extends TestBase {
@@ -22,9 +22,20 @@ public class VerifyAbilityToCreateANewUSer extends TestBase {
 
     @Test
     public void verifyCreatingNewUser() {
-//        UserDto userDto = new UserDto(id, name, username, email, addressDto, phone, website, companyDto);
-//        Response response = UserClient.createNewUSer(userDto);
-//        userAssert.verifyCreatingUserResponseCodeIs201(response);
+        UserDto userDto = new UserDto()
+                .setUserName(name)
+                .setEmail(email)
+                .setAddress(addressDto)
+                .setPhone(phone);
+
+        UserDto createdUserResponse = Services.jsonPlaceHolderApi().user().createNewUSer(userDto);
+
+        //Verification
+        Assertions.assertThat(createdUserResponse)
+                .usingRecursiveComparison()
+                .ignoringAllOverriddenEquals()
+                .ignoringFields("id")
+                .isEqualTo(userDto);
     }
 
 

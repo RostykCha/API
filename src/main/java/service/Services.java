@@ -1,5 +1,7 @@
 package service;
 
+import service.mainService.JsonPlaceHolderApi;
+
 public class Services {
 
     public static JsonPlaceHolderApi jsonPlaceHolderApi(){

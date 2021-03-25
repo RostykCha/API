@@ -31,12 +31,22 @@ public abstract class AbstractWebEndpoint {
                 .then();
     }
 
-    public ValidatableResponse get(RequestSpecification requestSpecification, String path, Object bodyPayload, Object... pathParams) {
+    public ValidatableResponse get(RequestSpecification requestSpecification, String path, Object bodyPayload) {
         RequestSpecBuilder specBuilder = new RequestSpecBuilder();
         specBuilder.addRequestSpecification(requestSpecification);
         if (bodyPayload != null) {
             specBuilder.setBody(bodyPayload);
         }
+        return given()
+                .spec(specBuilder.build())
+                .when()
+                .get(path)
+                .then();
+    }
+
+    public ValidatableResponse get(RequestSpecification requestSpecification, String path, String pathParams) {
+        RequestSpecBuilder specBuilder = new RequestSpecBuilder();
+        specBuilder.addRequestSpecification(requestSpecification);
         return given()
                 .spec(specBuilder.build())
                 .when()

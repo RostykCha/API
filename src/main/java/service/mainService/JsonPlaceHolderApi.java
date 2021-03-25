@@ -1,4 +1,4 @@
-package service;
+package service.mainService;
 
 import io.restassured.specification.RequestSpecification;
 import models.base.clients.UserEndpoint;

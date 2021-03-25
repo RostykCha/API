@@ -1,8 +1,8 @@
 package tests.tests;
 
-import models.base.clients.UserClient;
 import models.base.dto.UserDto;
 import org.testng.annotations.Test;
+import service.Services;
 import tests.base.TestBase;
 
 public class VerifyGettingUser extends TestBase {
@@ -12,8 +12,8 @@ public class VerifyGettingUser extends TestBase {
     private final String expectedCity = "Gwenborough";
 
     @Test
-    public void verifyUpdatingUser() {
-        UserDto userDto = UserClient.getUSer(id);
+    public void verifyGettingUser() {
+        UserDto userDto = Services.jsonPlaceHolderApi().user().getUSer(id);
         userAssert.verifyUserDto(expectedName, expectedUserName, expectedCity, userDto);
     }
 }
