@@ -15,7 +15,7 @@ public class FilesUtil {
     public static Properties readFilePropertiesFromResources(String filePath) {
         Properties props = new Properties();
 
-        try (InputStream myIs = TestProperties.class.getResourceAsStream(filePath)) {
+        try (InputStream myIs = FilesUtil.class.getResourceAsStream(filePath)) {
             props.load(myIs);
 
         } catch (Exception e) {
