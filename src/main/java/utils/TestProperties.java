@@ -1,34 +1,32 @@
 package utils;
 
-import java.io.InputStream;
 import java.util.Properties;
 
 public class TestProperties {
+    private static final String filePath = "/environment/maven.properties";
+    private static TestProperties instance;
+    private Properties props;
 
-    static private Properties props;
+    TestProperties() {
+        readProperties();
+    }
 
-    private static void readProperties() {
-        if (props != null) {
-            return;
+    public static TestProperties getMavenProperties() {
+        if (instance == null) {
+            instance = new TestProperties();
         }
+        return instance;
+    }
 
-        props = new Properties();
-
-        try (InputStream myIs = TestProperties.class.getResourceAsStream("/environment/maven.properties")) {
-            props.load(myIs);
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    private void readProperties() {
+        if (props == null) {
+            props = FilesUtil.readFilePropertiesFromResources(filePath);
         }
     }
 
-    public static String getBaseUrl() {
-        readProperties();
+    public String getBaseUrl() {
         return props.getProperty("BASE_URL");
     }
-
-
-
 
 
 }

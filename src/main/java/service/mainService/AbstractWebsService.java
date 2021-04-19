@@ -9,7 +9,7 @@ public abstract class AbstractWebsService {
 
     protected RequestSpecification getDefaultRequestSpecification() {
         return new RequestSpecBuilder()
-                .setBaseUri(TestProperties.getBaseUrl())
+                .setBaseUri(TestProperties.getMavenProperties().getBaseUrl())
                 .setContentType(ContentType.JSON)
                 .build();
     }
